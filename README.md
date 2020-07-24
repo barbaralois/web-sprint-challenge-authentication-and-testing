@@ -26,11 +26,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
 
+-- JSON web tokens are stored by the client, and therefore aren't taking up extra space in the server. Session cookies are all stored on the server and can slow things down if you have too much site traffic. A JSON web token can be put into a 'translator' that will tell you the info passed with it, so you have to make sure not to include sensitive or personal information.
+
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+
+-- Bcrypt hashes the passwords so that they are not stored in the server in their initial form. You can set up how many times you'd like it to be hashed (which can speed up or slow down how long it takes) so you have to find the sweet spot on functionality vs security. It hashes every password with a 'salt'.
 
 3. How are unit tests different from integration and end-to-end testing.
 
+-- Unit tests are created for pure functions, where they do not depend on any other functionality throughout the application. Given the same inputs, a pure function will return the same values. Integration tests check how different functions interact with each other, such as whether correct arguments are being passed or if there are data flow errors, and end-to-end tests check the functionality of the whole system the way a user would interact with it.
+
 4. How _Test Driven Development_ changes the way we write applications and tests.
+
+-- Test Driven Development involves writing the failing tests first for the functionality you'd like to have. Then you go through test by test adding just enough to get that one to pass, as well as making sure the previous tests are still passing. This is the opposite of the way many people code, which is to brute force through a new function from start to finish, and then try and write tests in order to get them to pass with what is being returned from the existing function.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
